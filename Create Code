@@ -1,0 +1,20 @@
+int main()
+{
+//Move out of starting box
+create_connect();
+create_drive_direct(500, 500);
+//figure out how to make create stop also fix how far it needs to move forward
+//turn right 90 degrees
+set_create_total_angle(90);
+//move forward again
+create_dirve_direct(500, 500);
+// make arm sweep foam cubes into the basket
+int i, number, total= 0;
+for(i=1 ; i<= 4; i++)
+	{
+		Total = total + i;
+		set_servo_position(0, 2047);
+set_servo_position(0, 0);
+}
+	Return 0;
+}
