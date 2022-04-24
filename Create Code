@@ -16,5 +16,5 @@ for(i=1 ; i<= 4; i++)
 		set_servo_position(0, 2047);
 set_servo_position(0, 0);
 }
-	Return 0;
+	return 0;
 }
