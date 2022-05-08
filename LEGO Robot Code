@@ -1,13 +1,38 @@
-#include <kipr/wombat.h>
+#include <lipr/wombat.h>
+//LEGO ROBOT
+//right wheel is port 1 with red wite up, left wheel is port 2 with black wire up (up means facing the screen)
 
-
-int main()
+//Main code
+//Moving forward (THE MOTORS ARE ON BACKWARDS SO NEGATIVE = FORWARDS POSITIVE = BACKWARDS)
+nt main()
 {
-	//still need to get robot aligned
-	mrp(1, 13200); //moves left wheel once robot is aligned
-	mrp(2, 13200); //moves right wheel once robot is aligned
-	msleep(30);
+	//LIGHT SENSOR
+	wait_for_light(2);
+	printf(“I can see the light!\n”);
+	shut_down_in(118);
+	//Actual code starts
+	mrp(1, 1000, 3300);
+	mrp(2, 1000, 3300);
+	msleep(1000);
 	bmd(1);
 	bmd(2);
-	return 0;
+	//Turning 90 degrees to the right
+	motor(1, -80);
+	motor(2, 80);
+	msleep(1000);
+	//move forward to collect 20 pom poms
+	mrp(1, 1000, 14000);
+	mrp(2, 1000, 14000);
+	msleep(1000);
+	bmd(1);
+bmd(2);
+//ram into transporter to push pom poms into it
+enable_servos(0);
+//set_servo_position(0,2047);
+mrp(1, 1000, 1000);
+mrp(2, 1000, 1000);
+bmd(1);
+bmd(2);
+msleep(1000);
+return(0);
 }
