@@ -3,10 +3,22 @@
 
 int main()
 {
-	//Light sensors
-	wait_for_light(2);
-	printf(“I can see the light!\n”);
-	create_drive_direct(300, 300);
-	msleep(1700);
-	return 0;
-}
+   //Light sensors
+    wait_for_light(2);
+    printf("I can see the light!\n");
+    shut_down_in(118);
+    //move out of the starting box//
+   
+    create_connect();
+     msleep(20000);
+    printf("LET'S GOOOOOO\n");
+    create_drive_direct(300, 300);
+    msleep(1700);
+    //figure out how to make the create stop, also how far it needs to move forward//
+    //turn robot to the right 90 degres//
+    //set_create_total_angle(90);
+    //move forward again//
+    //create_drive_direct(500,500);
+    //msleep(1000); 
+    return(0);
+    }
